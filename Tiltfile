@@ -17,7 +17,7 @@ docker_build(
     context="src/api"
 )
 
-# Architectuer
+# Architecture
 docker_build(
     "dev8-architecture",
     context="architecture",
