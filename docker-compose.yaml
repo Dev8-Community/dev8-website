@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+
+  web:
+    image: dev8-web
+    restart: always
+    ports:
+      - "3000"
+    networks:
+      - site
+
+  api:
+    image: dev8-api
+    restart: always
+    ports:
+      - "3000"
+    networks:
+      - site
+
+networks:
+  site:
