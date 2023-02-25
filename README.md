@@ -13,4 +13,5 @@
 
 ## Things to Try
 
+- [ ] Flexible API hostname reference
 - [ ] Enable [SSR](https://docs.astro.build/en/guides/server-side-rendering/) in Astro
