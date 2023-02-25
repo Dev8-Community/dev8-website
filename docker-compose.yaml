@@ -17,5 +17,11 @@ services:
     networks:
       - site
 
+  architecture:
+    image: dev8-architecture
+    restart: always
+    ports:
+      - "8080"
+
 networks:
   site:

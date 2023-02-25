@@ -16,3 +16,12 @@ docker_build(
     "dev8-api",
     context="src/api"
 )
+
+# Architectuer
+docker_build(
+    "dev8-architecture",
+    context="architecture",
+    live_update=[
+        sync('./architecture', '/usr/local/structurizr')
+    ]
+)
