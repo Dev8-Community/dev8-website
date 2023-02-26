@@ -19,7 +19,12 @@ docker_build(
 # API Config
 docker_build(
     "dev8-api",
-    context="src/api"
+    context="src/api",
+    live_update=[
+        sync('./src/api', '/usr/src/app'),
+        sync('./src/api/package.json', '/usr/src/app/package.json'),
+        run('npm install', trigger='./src/api/package.json')
+    ]
 )
 
 # Architecture
