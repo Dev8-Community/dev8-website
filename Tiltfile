@@ -1,5 +1,10 @@
 docker_compose("./docker-compose.yaml")
 
+dc_resource("web", resource_deps=["api"], labels=["frontend"])
+dc_resource("api", resource_deps=["db"], labels=["backend"])
+dc_resource("db", labels=["data"])
+dc_resource("architecture", labels=["meta"])
+
 # Web Config
 docker_build(
     "dev8-web",
@@ -24,4 +29,10 @@ docker_build(
     live_update=[
         sync('./architecture', '/usr/local/structurizr')
     ]
+)
+
+# App Database
+docker_build(
+    "dev8-db",
+    context="src/db"
 )
