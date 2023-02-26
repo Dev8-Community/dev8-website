@@ -1,0 +1,17 @@
+{
+  "name": "dev8-web",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "serve": "astro dev --host"
+  },
+  "dependencies": {
+    "astro": "^2.0.15"
+  }
+}

@@ -1,0 +1,8 @@
+# Tools
+.devbox/
+
+# Config
+.env
+
+# Temp Data
+.data/**

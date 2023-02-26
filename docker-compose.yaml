@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+
+  web:
+    image: dev8-web
+    restart: always
+    ports:
+      - "3000"
+    environment:
+      - API_HOST=api
+    networks:
+      - site
+
+  api:
+    image: dev8-api
+    restart: always
+    ports:
+      - "3000"
+    environment:
+      - DB_HOST=db
+    networks:
+      - site
+
+  db:
+    image: dev8-db
+    ports:
+      - "5432"
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_DB=${POSTGRES_DB:-dev8}
+    networks:
+      - site
+
+  architecture:
+    image: dev8-architecture
+    restart: always
+    ports:
+      - "8080"
+
+networks:
+  site:

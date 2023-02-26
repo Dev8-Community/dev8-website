@@ -1,0 +1,6 @@
+{
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+}
